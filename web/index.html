@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WKCcode - خدمات برمجية احترافية</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* إضافة تنسيق للزر الثانوي ولتجميع الأزرار */
+        .btn-secondary {
+            display: inline-block;
+            color: var(--primary-blue) !important;
+            border: 2px solid var(--primary-blue); 
+            background: transparent;
+            padding: 15px 40px; 
+            border-radius: 50px; 
+            transition: all 0.4s ease; 
+            text-decoration: none;
+            font-weight: 700;
+            cursor: none; 
+            /* إزالة المسافة الأفقية من هذا الزر نفسه، سيتم إدارتها بواسطة btn-group */
+        }
+        .btn-secondary:hover {
+            background-color: rgba(0, 191, 255, 0.1); 
+        }
+
+        /* تنسيق لتجميع الأزرار معاً */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* للسماح للزر بالانتقال لسطر جديد في الشاشات الصغيرة */
+            margin-top: 20px;
+        }
+        .btn-group .btn-primary {
+            margin: 10px 15px; /* إضافة مسافة بين الزرين */
+        }
+        .btn-group .btn-secondary {
+            margin: 10px 15px; /* إضافة مسافة بين الزرين */
+        }
+        
+        /* تعديل التجاوب للأزرار لضمان أن تبقى مرئية في شاشات الجوال */
+        @media (max-width: 768px) {
+            .btn-group {
+                flex-direction: column; /* جعل الأزرار تأتي فوق بعضها في الجوال */
+            }
+            .btn-group .btn-primary, .btn-group .btn-secondary {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="custom-cursor"></div>
+    <div id="dynamic-background"></div>
+
+    <header>
+        <nav class="container">
+            <h1><span style="color: var(--primary-blue);">WKC</span>code</h1>
+            <ul>
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="how_it_works.html">آلية العمل</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="portfolio.html">أعمالنا</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+                <li><a href="privacy.html">سياسة الخصوصية</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" style="min-height: 80vh;">
+        <div class="container">
+            <h2>شريكك التقني لتصاميم <span style="color: var(--primary-blue);">احترافية وديناميكية WKCcode</span></h2>
+            
+            <p style="font-size: 1.2em; max-width: 800px; margin: 20px auto 40px;">
+                نحن متخصصون في برمجة بوتات الديسكورد، وتطوير الويب، وتأسيس السيرفرات. نضمن لك الإتقان في كل سطر كود.
+            </p>
+            
+            <div class="btn-group">
+                <a href="services.html" class="btn-primary">عرض جميع الخدمات</a>
+                
+                <a href="how_it_works.html" class="btn-secondary">عرض آلية العمل</a>
+            </div>
+
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 WKCcode. تصميم احترافي متقن.</p>
+    </footer>
+
+    <script>
+        function initDynamicEffects() {
+            const cursor = document.getElementById('custom-cursor');
+            const background = document.getElementById('dynamic-background');
+            if (cursor && background) {
+                document.addEventListener('mousemove', (e) => {
+                    cursor.style.left = `${e.clientX}px`;
+                    cursor.style.top = `${e.clientY}px`;
+                    const movementX = (e.clientX / window.innerWidth - 0.5) * -10; 
+                    const movementY = (e.clientY / window.innerHeight - 0.5) * -10;
+                    background.style.transform = `translate(${movementX}px, ${movementY}px)`;
+                });
+            }
+        }
+        window.onload = initDynamicEffects;
+    </script>
+</body>
+</html>
