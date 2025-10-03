@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - WKCcode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="custom-cursor"></div>
+    <div id="dynamic-background"></div>
+
+    <header>
+        <nav class="container">
+            <h1><span style="color: var(--primary-blue);">WKC</span>code</h1>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="portfolio.html">أعمالنا</a></li>
+                <li><a href="contact.html" class="active">تواصل معنا</a></li>
+                <li><a href="privacy.html">سياسة الخصوصية</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>ابدأ مشروعك الآن</h2>
+            <p style="max-width: 800px; margin: 20px auto;">
+              أرسل لنا تفاصيل طلبك وسنتواصل معك عبر الإيميل أو الديسكورد في اسرع وقت ممكن.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact-details" style="background-color: var(--light-bg);">
+        <div class="container">
+            <h3>طرق التواصل المباشرة (يرجى تحديد الخدمة المطلوبة)</h3>
+            <div class="service-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                
+                <div class="service-card" style="border-top: 5px solid #7289DA;">
+                    <h4>تواصل عبر سيرفر الديسكورد (الأسرع)</h4>
+                    <p>انضم إلى سيرفرنا الرسمي وتحدث مع فريق الدعم الفني مباشرة لبدء مشروعك.</p>
+                    
+                    <a href="https://discord.gg/YOURINVITELINK" target="_blank" class="btn-primary" style="margin-top: 25px; background-color: #7289DA;">انضم للسيرفر الآن</a>
+                    
+                    <p style="margin-top: 10px; font-weight: bold;">رابط الدعوة: <span style="color: var(--primary-blue);">https://discord.gg/sw9zvVSd</span></p>
+                </div>
+
+                <div class="service-card" style="border-top: 5px solid #BB001B;">
+                    <h4>تواصل عبر البريد الإلكتروني</h4>
+                    <p>للاستفسارات الرسمية أو طلبات العروض المفصلة. سنرد عليك بأسرع وقت.</p>
+                    <a href="mailto:contact@wkccode.com" class="btn-primary" style="margin-top: 25px; background-color: #BB001B;">إرسال إيميل</a>
+                    <p style="margin-top: 10px; font-weight: bold;">الإيميل: <span style="color: var(--primary-blue);">kadhm7383@gmail.com</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 WKCcode. كل الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        function initDynamicEffects() {
+            const cursor = document.getElementById('custom-cursor');
+            const background = document.getElementById('dynamic-background');
+            if (cursor && background) {
+                document.addEventListener('mousemove', (e) => {
+                    cursor.style.left = `${e.clientX}px`;
+                    cursor.style.top = `${e.clientY}px`;
+                    const movementX = (e.clientX / window.innerWidth - 0.5) * -10; 
+                    const movementY = (e.clientY / window.innerHeight - 0.5) * -10;
+                    background.style.transform = `translate(${movementX}px, ${movementY}px)`;
+                });
+            }
+        }
+        window.onload = initDynamicEffects;
+    </script>
+</body>
+</html>
